@@ -4,11 +4,11 @@ using System;
 
 namespace Library
 {
-    public class Node
+    public class Node<T>
     {
         private int number;
-
-        private List<Node> children = new List<Node>();
+        
+        private List<Node<T>> children = new List<Node<T>>();
 
         public int Number {
             get
@@ -17,7 +17,7 @@ namespace Library
             }
         }
 
-        public ReadOnlyCollection<Node> Children { 
+        public ReadOnlyCollection<Node<T>> Children { 
             get
             {
                 return this.children.AsReadOnly();
@@ -29,7 +29,7 @@ namespace Library
             this.number = number;
         }
 
-        public void AddChildren(Node n)
+        public void AddChildren(Node<T> n)
         {
             this.children.Add(n);
         }
