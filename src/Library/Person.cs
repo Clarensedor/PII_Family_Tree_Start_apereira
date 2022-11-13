@@ -4,13 +4,15 @@ namespace Library
 {
     public class Person
     {
-        public Person(string name, string edad)
+        public Person(string name, int edad)
         {
             this.Name = name;
             this.Edad = edad;
         }
 
         private string name;
+
+        public int edad;
 
         public string Name
         {
@@ -28,19 +30,16 @@ namespace Library
             }
         }
 
-        public string Edad
+        public int Edad
         {
             get
             {
-                return this.name;
+                return this.Edad;
             }
             
             set
             {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
+                    this.Edad = value;
             }
         }
 
