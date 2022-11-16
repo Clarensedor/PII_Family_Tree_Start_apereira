@@ -1,47 +1,25 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System;
 
 namespace Library
 {
     public class Person
     {
-        public Person(string name, int edad)
+        public string name {get; }
+        public int age {get; }
+        
+        public  Person (string name, int age) 
         {
-            this.Name = name;
-            this.Edad = edad;
+            this.name = name;
+            this.age = age;
+
+        }
+        public void Accept(IVisitor<Person> visitor)
+        {
+             visitor.Visit(this);
         }
 
-        private string name;
-
-        public int edad;
-
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    this.name = value;
-                }
-            }
-        }
-
-        public int Edad
-        {
-            get
-            {
-                return this.Edad;
-            }
-            
-            set
-            {
-                    this.Edad = value;
-            }
-        }
 
     }
 }
